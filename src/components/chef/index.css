@@ -1,0 +1,25 @@
+.chef-bg {
+	background-image: url(../images/chef-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chef-dropdown h1 {
+	margin-bottom: 40px;
+	color: #ca370b;
+	font-size: 30px;
+	text-align: center;
+}
+.chef-dropdown {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 30%;
+	width: 80%;
+	padding: 10%;
+	background-color: #f1f1f1a6;
+}

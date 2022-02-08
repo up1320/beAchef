@@ -1,0 +1,82 @@
+.navbar {
+	text-align: center;
+	height: 100px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.navbar a {
+	font-size: 20px;
+	font-weight: bold;
+	color: #ca370b !important;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.Branding {
+	font-size: 22px !important;
+	font-weight: bold;
+}
+.cuisineImage {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	border: 5px solid #ec8a5f !important;
+	padding: 2px;
+	cursor: pointer;
+}
+.cuisineImage:hover {
+	opacity: 0.6;
+	border: 8px solid #ca370b !important;
+	transition: all 0.5s ease-in;
+}
+.landingPageImage {
+	background-image: url(../images/landing-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 500px;
+}
+.start-btn {
+	width: 250px;
+	height: 55px;
+	border-radius: 25px;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white !important;
+	border: none;
+	background-color: #ff4e00 !important;
+	background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%) !important;
+	align-self: center;
+}
+.branding {
+	font-size: 100px;
+	text-align: center;
+}
+.landing-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ca370bab;
+	color: white;
+	height: 300px;
+}
+.about {
+	height: 250px;
+	text-align: center;
+	line-height: 1.25;
+	background-color: #ca370b;
+	color: wheat;
+	font-size: 15px;
+
+	margin-bottom: 40px;
+}
+.about h3 {
+	font-size: 40px;
+	padding: 15px;
+}
+.about p {
+	padding: 15px;
+}
+.post {
+	margin-bottom: 20px;
+}
