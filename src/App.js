@@ -8,6 +8,7 @@ import Home from "./container/Home";
 import UserProfile from "./components/UserProfile/UserProfile";
 import { fetchUser } from "./utils/fetchUser";
 import { useEffect } from "react";
+import FeelFood from "./components/feelFood";
 
 function App() {
   const navigate = useNavigate()
@@ -24,7 +25,7 @@ function App() {
         <Route path="/*" element={<Home />} />
         <Route path="/chef" element={<Chef />} />
         <Route path="login" element={<Login />} />
-       
+        <Route path="feelFood" element={<FeelFood /> } />
       </Routes>
       
 

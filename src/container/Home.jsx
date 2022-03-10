@@ -42,7 +42,8 @@ const Home = () => {
           <Link to={`user-profile/${user?._id}`}>
             <img src={user?.image} alt="user-pic" className="w-9 h-9 rounded-full " />
           </Link>
-        </div>
+          
+        </div> 
         {toggleSidebar && (
         <div className="fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
           <div className="absolute w-full flex justify-end items-center p-2">
@@ -55,7 +56,7 @@ const Home = () => {
       <div className="pb-2 flex-1 h-screen overflow-y-scroll" ref={scrollRef}>
         <Routes>
           <Route path="/user-profile/:userId" element={<UserProfile />} />
-          <Route path="/*" element={<Recipes user={user && user} />} />
+          <Route path="/*" element={<Recipes user={user && user} />} /> 
         </Routes>
       </div>
     </div>

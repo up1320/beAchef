@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-import { IoMdAdd,IoMdSearch } from 'react-icons/io'
+import { IoMdAdd, IoMdSearch } from 'react-icons/io'
+import logo from "../images/logo.jpg"
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
 
@@ -26,6 +27,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         </Link>
         <Link to='create-recipe' className='bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
          <IoMdAdd />
+        </Link>
+        <Link to="/feelFood">
+            <img src={logo} className='bg-black w-14 h-12 rounded-lg'/>
         </Link>
       </div>
     </div>
