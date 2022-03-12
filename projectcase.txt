@@ -1,0 +1,222 @@
+// App.js
+import React, { Component } from 'react';
+import './App.css';
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        
+      </div>
+    );
+  }
+}
+export default App;
+
+
+//library  and api fetching library ours
+
+//create components folder under src file then create
+3 files title.js, image.js, Recipecard.js
+
+//In recipe card 
+
+import React, { Component } from 'react';
+import Title from './Title';
+import Image from './Image';
+export default class RecipeCard extends Component {
+ render(){
+  return(
+          <div>
+            {this.props.meals.map((item, index) => {
+              return (
+                <a 
+                  key={index} 
+                  href={item.strSource}>
+                  <Image source={item.strMealThumb} text={item.strMeal} />
+                  <Title title={item.strMeal} />
+                </a> 
+              )
+          })}
+         </div>
+  )
+ }
+}
+
+
+//in title card
+
+import React, { Component } from 'react';
+export default class Title extends Component {
+ render(){
+  return( <h2>{this.props.title}</h2> )
+ }
+}
+
+// In image card
+
+import React, { Component } from 'react';
+export default class Image extends Component {
+ render(){
+  return( <img src={this.props.source} alt={this.props.text} /> )
+ }
+}
+
+//after this call recipe card in App.js with this
+
+import React, { Component } from 'react';
+import axios from 'axios';
+import RecipeCard from './components/RecipeCard';
+import './App.css';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      meal: {}
+    }
+  }
+  componentDidMount(){
+    const URL = 'https://www.themealdb.com/api/json/v1/1/latest.php';
+    axios.get(URL)
+      .then(res => {
+        const meal = res.data.meals;
+        if(typeof meal === 'object'){
+          this.setState({ meal });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+}
+render() {
+    var data = this.state.meal;
+    return (
+      <div className="App">
+        {data.length > 0 && <RecipeCard meals={data} />}
+      </div>
+    );
+  }
+}
+export default App;
+
+// Using style component library
+
+import React, { Component } from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+import RecipeCard from './components/RecipeCard';
+import './App.css';
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      meal: {}
+    }
+  }
+
+  componentDidMount(){
+    const URL = 'https://www.themealdb.com/api/json/v1/1/latest.php';
+
+    axios.get(URL)
+      .then(res => {
+        const meal = res.data.meals;
+        if(typeof meal === 'object'){
+          this.setState({ meal });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+  }
+
+  render() {
+    var data = this.state.meal;
+    return (
+      <AppContainer className="App">
+        {data.length > 0 && <RecipeCard meals={data} />}
+      </AppContainer>
+    );
+  }
+}
+
+const AppContainer = styled.div`
+  background: #fff;
+  padding: 2em;
+`;
+
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Title from './Title';
+import Image from './Image';
+
+export default class RecipeCard extends Component {
+	render(){
+		console.log("PROPS=>", this.props);
+		return(
+          <div>
+         	{this.props.meals.map((item, index) => {
+         		return ( 
+         			<Card 
+         				key={index} 
+         				href={item.strSource}>
+         				<Image source={item.strMealThumb} text={item.strMeal} />
+         				<Title title={item.strMeal} />
+         			</Card> 
+         		)
+         	})}
+          </div>
+		)
+	}
+}
+
+const Card = styled.a`
+	max-width: 350px;
+	width: 100%;
+	display: inline-block;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #000;
+	margin: 0 10px 15px;
+    box-shadow: 7px 7px 50px -10px rgba(0, 0, 0, .5);
+`;
+
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+export default class Title extends Component {
+	render(){
+		console.log("PROPS=>", this.props);
+		return(
+          <Header>{this.props.title}</Header>
+		)
+	}
+}
+
+const Header = styled.h2`
+    text-align: center;
+    color: #000;
+    margin: 0;
+    font-family: monospace;
+    font-size: 24px;
+    line-height: 32px;
+`;
+
+import React, { Component } from 'react';
+import styled from 'styled-components';
+
+export default class Image extends Component {
+	render(){
+		console.log("PROPS=>", this.props);
+		return(
+			<ImageComponent src={this.props.source} alt={this.props.text} />
+		)
+	}
+}
+
+const ImageComponent = styled.img`
+	width: 100%;
+	height: 100%;
+`;
