@@ -1,0 +1,26 @@
+.outerContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-image: url(../images/french.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: #ffffff;
+	border-radius: 8px;
+	height: 60%;
+	width: 60% !important;
+}
+.foodConnectHeading {
+	font-size: 45px !important;
+	font-weight: bold;
+	color: black;
+}

@@ -9,6 +9,8 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import { fetchUser } from "./utils/fetchUser";
 import { useEffect } from "react";
 import FeelFood from "./components/feelFood";
+import Join from "./components/Join/Join";
+import Chat from "./components/Chat/Chat";
 
 function App() {
   const navigate = useNavigate()
@@ -25,7 +27,9 @@ function App() {
         <Route path="/*" element={<Home />} />
         <Route path="/chef" element={<Chef />} />
         <Route path="login" element={<Login />} />
-        <Route path="feelFood" element={<FeelFood /> } />
+        <Route path="feelFood" element={<FeelFood />} />
+        <Route path="/foodConnect" element={<Join />} />
+        <Route path="/foodConnect/chat" element={<Chat />} />
       </Routes>
       
 

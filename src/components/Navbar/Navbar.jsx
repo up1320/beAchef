@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-import { IoMdAdd, IoMdSearch } from 'react-icons/io'
+import { IoMdAdd, IoMdSearch} from 'react-icons/io'
+import {AiOutlineMessage} from "react-icons/ai"
 import logo from "../images/logo.jpg"
+
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   const navigate = useNavigate();
 
@@ -30,6 +32,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         </Link>
         <Link to="/feelFood">
             <img src={logo} className='bg-black w-14 h-12 rounded-lg'/>
+        </Link>
+        <Link to='/foodConnect' className='bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-12 flex justify-center items-center'>
+            <AiOutlineMessage />
         </Link>
       </div>
     </div>
