@@ -1,0 +1,37 @@
+.recipe-container{
+    height: 400px;
+    width: 250px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    text-align: center;
+    background: white;
+}
+.recipe-img{
+    width: 100%;
+    height: 70%;
+
+}
+.recipe-name{
+    width: 100%;
+    height: 20%;
+}
+.recipe-name h1{
+    font-weight: bold;
+    font-style: italic;
+}
+.recipe-buttons{
+    width: 100%;
+    height: 10%;
+}
+.recipe-button{
+    text-align: center !important;
+    width: 100px;
+    padding: 15px;
+    height: 50px;
+    background-color: orangered;
+    border-radius: 25px;
+}
